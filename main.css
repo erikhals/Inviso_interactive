@@ -49,6 +49,7 @@ body {
   width: 100%;
   border-color: #00ffff;
   border-width: 2px;
+  opacity: 0;
 }
 .box.left {
   border-style: none solid none none;
@@ -75,7 +76,7 @@ svg {
 .st0 {
   fill: url(#SVGID_1_);
 }
-.st1 {
+.connector {
   fill: none;
   stroke: #00ffff;
   stroke-miterlimit: 10;
@@ -83,23 +84,25 @@ svg {
 .st2 {
   fill: #f2f2f2;
 }
-.st3 {
+.textline {
   fill: none;
   stroke: #00ffff;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-miterlimit: 10;
+  opacity: 0;
 }
 .st4 {
   fill: url(#SVGID_2_);
 }
 .st5 {
   fill: none;
+  display: collapse;
 }
 .st6 {
   fill: #ffffff;
 }
-.st7 {
+.outline {
   fill: #00ffff;
 }
 .st8 {
