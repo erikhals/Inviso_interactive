@@ -30,8 +30,8 @@ gsap.utils.toArray(".feature").forEach((feature) => {
 
   let clicktl = gsap.timeline({ paused: true });
   clicktl
-    .to(textline, { opacity: 1, duration: 0.3 })
-    .to(box, { opacity: 1, duration: 0.2 })
+    .to(textline, { opacity: 1, duration: 0.2 })
+    .to(box, { opacity: 1, duration: 0.3 }, "<")
     .to(list, { opacity: 1, stagger: 0.1 }, "<");
 
   feature.addEventListener("mouseenter", () => !active && hovertl.play());
