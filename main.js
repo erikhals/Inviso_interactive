@@ -30,14 +30,14 @@ function makeInteractive() {
     hovertl
       .to(feature, { opacity: 1, scale: 1 })
       .to(line, { opacity: 1 }, "<")
-      .to(outline, { opacity: 1 });
+      .to(outline, { opacity: 1 }, "=-0.2");
 
     //Click animation
     let clicktl = gsap.timeline({ paused: true });
     clicktl
       .to(textline, { opacity: 1, duration: 0.2 })
       .to(box, { opacity: 1, duration: 0.3 }, "<")
-      .to(list, { opacity: 1, stagger: 0.1 }, "<");
+      .to(list, { opacity: 1, translateX: 0, stagger: 0.1 }, "<");
 
     //Hover and click listeners
     feature.addEventListener("mouseenter", () => !active && hovertl.play());

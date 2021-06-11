@@ -69,6 +69,12 @@ body {
   padding: 0;
   opacity: 0;
 }
+.box.left li {
+  transform: translateX(-10px);
+}
+.box.right li {
+  transform: translateX(10px);
+}
 
 svg {
   grid-column: 2;
