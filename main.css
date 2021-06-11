@@ -12,6 +12,9 @@ body {
     rgba(30, 33, 41, 1) 100%
   );
 }
+.feature {
+  cursor: pointer;
+}
 
 .container {
   font-family: "Roboto", sans-serif;
@@ -64,6 +67,7 @@ body {
 .box li {
   list-style: none;
   padding: 0;
+  opacity: 0;
 }
 
 svg {

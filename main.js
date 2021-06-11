@@ -15,9 +15,13 @@ gsap.utils.toArray(".feature").forEach((feature) => {
   const pad = feature.querySelector(".pad"),
     line = feature.querySelector(".connector"),
     outline = feature.querySelector(".outline"),
-    textline = feature.querySelector(".textline");
-  let active = false;
+    textline = feature.querySelector(".textline"),
+    boxId = "#" + feature.id + "box",
+    box = document.querySelector(boxId),
+    list = box.querySelectorAll("ul li");
+  console.log(list);
 
+  let active = false;
   let hovertl = gsap.timeline({ paused: true });
   hovertl
     .to(feature, { opacity: 1, scale: 1 })
@@ -25,12 +29,16 @@ gsap.utils.toArray(".feature").forEach((feature) => {
     .to(outline, { opacity: 1 });
 
   let clicktl = gsap.timeline({ paused: true });
-  clicktl.to(textline, { opacity: 1 });
+  clicktl
+    .to(textline, { opacity: 1, duration: 0.3 })
+    .to(box, { opacity: 1, duration: 0.2 })
+    .to(list, { opacity: 1, stagger: 0.1 }, "<");
 
   feature.addEventListener("mouseenter", () => !active && hovertl.play());
   feature.addEventListener("mouseleave", () => !active && hovertl.reverse());
   feature.addEventListener("click", () => {
     hovertl.progress(1).paused(true);
+    active ? clicktl.reverse() : clicktl.play();
     active = !active;
   });
 });
