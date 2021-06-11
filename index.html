@@ -906,6 +906,70 @@
             points="231,111.2 189.1,48.3 0.7,48.3 	"
           />
         </g>
+        <ellipse class="shadow" cx="387" cy="800" rx="200" ry="10" />
+        <defs>
+          <filter
+            id="glow"
+            filterUnits="userSpaceOnUse"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+          >
+            <!-- blur the text at different levels-->
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="5"
+              result="blur5"
+            />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur10"
+            />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="20"
+              result="blur20"
+            />
+            <!-- merge all the blurs except for the first one -->
+            <feMerge result="blur-merged">
+              <feMergeNode in="blur10" />
+              <feMergeNode in="blur20" />
+            </feMerge>
+            <feMerge>
+              <!-- largest blurs coloured red -->
+              <feMergeNode in="blur5" />
+              <!-- smallest blur left white -->
+              <feMergeNode in="SourceGraphic" />
+              <!-- original white text -->
+            </feMerge>
+          </filter>
+          <filter
+            id="shadowblur"
+            filterUnits="userSpaceOnUse"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+          >
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="20"
+              result="blur20"
+            />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="40"
+              result="blur40"
+            />
+            <!-- merge all the blurs except for the first one -->
+            <feMerge result="blur-merged">
+              <feMergeNode in="blur20" />
+              <feMergeNode in="blur40" />
+            </feMerge>
+          </filter>
+        </defs>
       </svg>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>

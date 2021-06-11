@@ -40,7 +40,6 @@ function makeInteractive() {
       .to(list, { opacity: 1, stagger: 0.1 }, "<");
 
     //Hover and click listeners
-
     feature.addEventListener("mouseenter", () => !active && hovertl.play());
     feature.addEventListener("mouseleave", () => !active && hovertl.reverse());
 

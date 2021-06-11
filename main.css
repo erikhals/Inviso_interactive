@@ -108,6 +108,7 @@ svg {
 }
 .outline {
   fill: #00ffff;
+  filter: url(#glow);
 }
 .st8 {
   fill: url(#SVGID_3_);
@@ -136,4 +137,8 @@ svg {
 }
 .st14 {
   fill: url(#SVGID_7_);
+}
+.shadow {
+  opacity: 0.4;
+  filter: url(#shadowblur);
 }
