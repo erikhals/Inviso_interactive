@@ -4,3 +4,6 @@
 3. Right click to open index.html in Notepad or other simple text editor
 4. Copy and edit the `<li>` elements, keeping the structure
 5. Save and double click index.html to open in browser (F11 for full screen)
+
+Instruction video:
+https://vimeo.com/562118694/07a0061cae
