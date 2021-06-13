@@ -1,4 +1,4 @@
-# Inviso_interactive
+# Inviso interactive
 1. Click Code and Download ZIP
 2. Extract ZIP-file to desired location
 3. Right click to open index.html in Notepad or other simple text editor
