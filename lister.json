@@ -1,0 +1,56 @@
+[
+  {
+    "title": "360.air",
+    "list": [
+      "Oversikt",
+      "Inspirasjon",
+      "Informasjon",
+      "Beslutningsstøtte",
+      "Tilknytninger"
+    ]
+  },
+  {
+    "title": "AIM",
+    "list": [
+      "Digital Markedsføring",
+      "Kundeinnsikt",
+      "Lojalitet",
+      "Optimalisering",
+      "Beslutningsstøtte"
+    ]
+  },
+  {
+    "title": "3D.future",
+    "list": [
+      "3D illustrasjoner av fiktive bygg/rom",
+      "Konseptualisere fremtidige løsninger",
+      "Interiør/Eksteriør"
+    ]
+  },
+  {
+    "title": "Obj finder",
+    "list": ["Orientering", "Tilgjengelighet", "Kundeengasjement", "Booking"]
+  },
+  {
+    "title": "360.object",
+    "list": [
+      "Lokasjon",
+      "Oversikt",
+      "Informasjon",
+      "Beslutningsstøtte",
+      "Tilknytninger"
+    ]
+  },
+  {
+    "title": "360.space",
+    "list": [
+      "Opplevelse",
+      "Orientering",
+      "Bekreftelser",
+      "Inspirasjon",
+      "Booking",
+      "Dokumentasjon",
+      "Markedsplass"
+    ]
+  }
+]
