@@ -32,26 +32,25 @@ body {
   overflow: hidden;
 }
 
-.leftboxes {
-  grid-column: 1;
+.boxcontainer {
   height: 96vh;
   margin-top: 2vh;
   margin-bottom: 2vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+
+.boxcontainer.left {
+  grid-column: 1;
   text-align: right;
   align-items: end;
-  justify-content: space-around;
 }
-.rightboxes {
-  height: 96vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+
+.boxcontainer.right {
   grid-column: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
+
 .box {
   color: white;
   width: 100%;
@@ -59,24 +58,30 @@ body {
   border-width: 2px;
   opacity: 0;
 }
+
 .box.left {
   border-style: none solid none none;
 }
+
 .box.right {
   border-style: none none none solid;
 }
+
 .box ul {
   margin: 0;
   padding: 0 2vh;
 }
+
 .box li {
   list-style: none;
   padding: 0;
   opacity: 0;
 }
+
 .box.left li {
   transform: translateX(-10px);
 }
+
 .box.right li {
   transform: translateX(10px);
 }
@@ -88,17 +93,12 @@ svg {
   width: 100%;
 }
 
-.st0 {
-  fill: url(#SVGID_1_);
-}
 .connector {
   fill: none;
   stroke: #00ffff;
   stroke-miterlimit: 10;
 }
-.st2 {
-  fill: #f2f2f2;
-}
+
 .textline {
   fill: none;
   stroke: #00ffff;
@@ -107,49 +107,38 @@ svg {
   stroke-miterlimit: 10;
   opacity: 0;
 }
-.st4 {
-  fill: url(#SVGID_2_);
-}
-.st5 {
-  fill: none;
-  display: collapse;
-}
-.st6 {
+
+.whitefill {
   fill: #ffffff;
 }
+
 .outline {
   fill: #00ffff;
   filter: url(#glow);
 }
-.st8 {
-  fill: url(#SVGID_3_);
+
+.centergradient {
+  fill: url(#SVGID_1_);
 }
-.st9 {
-  fill: url(#SVGID_4_);
+
+.padgradient {
+  fill: url(#SVGID_2_);
 }
-.st10 {
-  fill: none;
-  stroke: #00ffff;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-}
-.st11 {
-  fill: url(#SVGID_5_);
-}
-.st12 {
-  fill: url(#SVGID_6_);
-}
-.st13 {
+
+.cyanstroke {
   fill: none;
   stroke: #00ffff;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 10;
 }
-.st14 {
-  fill: url(#SVGID_7_);
-}
+
 .shadow {
   opacity: 0.4;
   filter: url(#shadowblur);
+}
+
+.hide {
+  fill: none;
+  display: collapse;
 }
