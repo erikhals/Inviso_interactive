@@ -1,0 +1,19 @@
+{
+  "name": "inviso-interactive-electron",
+  "version": "1.0.0",
+  "description": "An electron wrapped version of the inviso wheel",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikhals/inviso-interactive-electron.git"
+  },
+  "author": "Erik Hals <erikhals@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikhals/inviso-interactive-electron/issues"
+  },
+  "homepage": "https://github.com/erikhals/inviso-interactive-electron#readme"
+}
