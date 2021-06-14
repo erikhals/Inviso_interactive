@@ -50,3 +50,54 @@ function makeInteractive() {
     });
   });
 }
+
+document.getElementById("drag").ondragstart = (event) => {
+  event.preventDefault();
+  window.api.send("onDragStart", "lister.json");
+};
+
+document.addEventListener("drop", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  window.api.receive("fromDropped", (data) => {
+    updateFeatures(data);
+  });
+
+  for (const f of event.dataTransfer.files) {
+    // Using the path attribute to get absolute file path
+    window.api.send("onDropped", f.path);
+  }
+});
+
+document.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+document.addEventListener("dragenter", (event) => {
+  console.log("File is in the Drop Space");
+});
+
+document.addEventListener("dragleave", (event) => {
+  console.log("File has left the Drop Space");
+});
+
+function updateFeatures(json) {
+  for (let u = 0; u < 6; u++) {
+    let v = u + 1;
+
+    let featureText = document.getElementById("featuretext" + v);
+    featureText.innerHTML = json[u].title;
+
+    let listDiv = document.getElementById("feature" + v + "box");
+    listDiv.innerHTML = "";
+    let ul = document.createElement("ul");
+    for (var i = 0; i < json[u].list.length; ++i) {
+      let li = document.createElement("li");
+      li.innerHTML = json[u].list[i]; // Use innerHTML to set the text'
+      ul.appendChild(li);
+    }
+    listDiv.appendChild(ul);
+  }
+}
