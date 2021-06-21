@@ -14,56 +14,57 @@ function animate() {
     .to(".outline, .connector, .textline", { opacity: 0 }, "<");
 
   //Feature interactivity
-  function makeInteractive() {
-    gsap.utils.toArray(".feature").forEach((feature) => {
-      const line = feature.querySelector(".connector"),
-        outline = feature.querySelector(".outline"),
-        textline = feature.querySelector(".textline"),
-        boxId = "#" + feature.id + "box",
-        box = document.querySelector(boxId),
-        list = box.querySelectorAll("ul li");
+}
 
-      //Click to toggle active
-      let active = false;
+function makeInteractive() {
+  gsap.utils.toArray(".feature").forEach((feature) => {
+    const line = feature.querySelector(".connector"),
+      outline = feature.querySelector(".outline"),
+      textline = feature.querySelector(".textline"),
+      boxId = "#" + feature.id + "box",
+      box = document.querySelector(boxId),
+      list = box.querySelectorAll("ul li");
 
-      //Hover animation
-      let hovertl = gsap.timeline({ paused: true });
-      hovertl
-        .to(feature, { opacity: 1, scale: 1 })
-        .to(line, { opacity: 1 }, "<")
-        .to(outline, { opacity: 1 }, "=-0.2");
+    //Click to toggle active
+    let active = false;
 
-      //Click animation
-      let clicktl = gsap.timeline({ paused: true });
-      clicktl
-        .to(textline, { opacity: 1, duration: 0.2 })
-        .to(box, { opacity: 1, duration: 0.3 }, "<")
-        .to(list, { opacity: 1, translateX: 0, stagger: 0.1 }, "<");
+    //Hover animation
+    let hovertl = gsap.timeline({ paused: true });
+    hovertl
+      .to(feature, { opacity: 1, scale: 1 })
+      .to(line, { opacity: 1 }, "<")
+      .to(outline, { opacity: 1 }, "=-0.2");
 
-      //Hover and click listeners
-      feature.addEventListener("mouseenter", () => !active && hovertl.play());
-      feature.addEventListener(
-        "mouseleave",
-        () => !active && hovertl.reverse()
-      );
+    //Click animation
+    let clicktl = gsap.timeline({ paused: true });
+    clicktl
+      .to(textline, { opacity: 1, duration: 0.2 })
+      .to(box, { opacity: 1, duration: 0.3 }, "<")
+      .to(list, { opacity: 1, translateX: 0, stagger: 0.1 }, "<");
 
-      feature.addEventListener("click", () => {
-        hovertl.progress(1).paused(true);
-        active ? clicktl.reverse() : clicktl.play();
-        active = !active;
-      });
+    //Hover and click listeners
+    feature.addEventListener("mouseenter", () => !active && hovertl.play());
+    feature.addEventListener("mouseleave", () => !active && hovertl.reverse());
+
+    feature.addEventListener("click", () => {
+      hovertl.progress(1).paused(true);
+      active ? clicktl.reverse() : clicktl.play();
+      active = !active;
     });
-  }
+  });
 }
 
 animate();
 
-document.getElementById("drag").ondragstart = (event) => {
+const dragto = document.getElementById("inviso");
+const dragfrom = document.getElementById("drag");
+
+dragfrom.ondragstart = (event) => {
   event.preventDefault();
   window.api.send("onDragStart", "lister.json");
 };
 
-document.addEventListener("drop", (event) => {
+dragto.addEventListener("drop", (event) => {
   event.preventDefault();
   event.stopPropagation();
 
@@ -77,16 +78,16 @@ document.addEventListener("drop", (event) => {
   }
 });
 
-document.addEventListener("dragover", (e) => {
+dragto.addEventListener("dragover", (e) => {
   e.preventDefault();
   e.stopPropagation();
 });
 
-document.addEventListener("dragenter", (event) => {
+dragto.addEventListener("dragenter", (event) => {
   console.log("File is in the Drop Space");
 });
 
-document.addEventListener("dragleave", (event) => {
+dragto.addEventListener("dragleave", (event) => {
   console.log("File has left the Drop Space");
 });
 

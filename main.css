@@ -157,3 +157,11 @@ svg {
   fill: none;
   display: collapse;
 }
+
+.grabbable {
+  cursor: grab;
+}
+
+.grabbable:active {
+  cursor: grabbing;
+}
