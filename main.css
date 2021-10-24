@@ -81,8 +81,13 @@ body {
 
 .box li {
   list-style: none;
+  color: white;
   padding: 0;
   opacity: 0;
+}
+
+.box a {
+  text-decoration: none;
 }
 
 .box.left li {
