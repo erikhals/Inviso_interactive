@@ -12,10 +12,8 @@ function animate() {
     })
     .to(".feature", { opacity: 0.5, scale: 0.95, transformOrigin: "center" })
     .to(".outline, .connector, .textline", { opacity: 0 }, "<");
-
-  //Feature interactivity
 }
-
+//Feature interactivity
 function makeInteractive() {
   gsap.utils.toArray(".feature").forEach((feature) => {
     const line = feature.querySelector(".connector"),
@@ -56,14 +54,13 @@ function makeInteractive() {
 
 animate();
 
-const dragto = document.getElementById("inviso");
 const dragfrom = document.getElementById("drag");
-
 dragfrom.ondragstart = (event) => {
   event.preventDefault();
   window.api.send("onDragStart", "lister.json");
 };
 
+const dragto = document.getElementById("inviso");
 dragto.addEventListener("drop", (event) => {
   event.preventDefault();
   event.stopPropagation();
